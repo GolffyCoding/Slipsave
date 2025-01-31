@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="th">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta property="og:title" content="Your Title" />
+    <meta property="og:description" content="Your Description" />
+    <meta property="og:image" content="https://yourdomain.com/image.jpg" />
+    <meta property="og:url" content="https://yourdomain.com" />
+    <title>Your Title</title>
+    
+      <link rel="stylesheet" href="style.css">
+    
+  </head>
+  <body>
+   
+    <div class="content">
+      <img src="https://gratisography.com/wp-content/uploads/2024/01/gratisography-cyber-kitty-800x525.jpg" alt="Profile" class="profile-img" />
+      <div class="store-name">ชื่อร้านค้า</div>
+      <img src="https://promptpay.io/0958967634/100.png" alt="PromptPay QR" />
+      <div class="timer" id="timer">05:00</div>
+      <input type="file" id="fileInput" style="display: none;" />
+      <label for="fileInput" class="btn-upload" id="labelslip">ส่งสลิป</label>
+      <button class="btn-show-popup" id="popupButton" onclick="showPopup()">กรอกข้อมูล</button>
+      <button id="uploadButton" class="btn-upload" style="display: none;" >Upload</button>
+  </div>
+  
+  <div id="popup" class="popup" style="display: none;">
+      <div class="popup-content">
+          <h2>กรอกข้อมูล</h2>
+          <input type="text" placeholder="ชื่อ" id="namecustomer"/>
+          <input type="text" placeholder="เบอร์โทร" id="phone"/>
+          <input type="text" placeholder="ที่อยู่" id="address" />
+          <button onclick="submitForm()">ยืนยัน</button>
+      </div>
+  </div>
+  
+
+  <div id="statusPopup" class="status-popup" style="display: none;">
+    <div class="status-popup-content">
+        <div id="statusIcon"></div>
+        <p id="statusMessage"></p>
+        <button onclick="handleStatusOk()"   class="btn-upload" >ตกลง</button>
+    </div>
+</div>
+
+
+<div id="loadingPopup" class="loading-popup" style="display: none;">
+  <div class="loading-popup-content">
+      <div class="loading-spinner"></div>
+      <p>กำลังอัพโหลด...</p>
+  </div>
+</div>
+
+
+
+    <script src="script.js"></script>
+  </body>
+</html>

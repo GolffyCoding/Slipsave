@@ -1,0 +1,226 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-image: url("https://images.unsplash.com/photo-1701690775017-c293a303bede?q=80&w=2128&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin: 0;
+  font-family: Arial, sans-serif;
+  text-align: center;
+  background-color: #f4f4f4;
+}
+
+@media only screen and (min-width: 600px) {
+  .content {
+    width: 20%;
+  }
+  .status-popup,.loading-popup,.validation-popup {
+    width: 30%;
+  }
+}
+
+@media only screen and (max-width: 599px) {
+  .content {
+    width: 60%;
+  }
+  .status-popup,.loading-popup,.validation-popup {
+    width: 60%;
+  }
+}
+
+
+.content {
+  
+  margin: 0 auto;
+  background: #fff; /* ใช้ #fff แทน white */
+  padding: 30px; /* เพิ่ม padding ขึ้นเล็กน้อย */
+  border-radius: 10px; /* ปรับขนาดมุมขึ้นเล็กน้อย */
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1); /* ปรับขนาดเงาขึ้นเล็กน้อย */
+}
+
+.profile-img {
+  width: 220px; /* ปรับขนาดความกว้างขึ้นเล็กน้อย */
+  height: 220px; /* ปรับขนาดความสูงขึ้นเล็กน้อย */
+  border-radius: 50%;
+  object-fit: cover;
+  margin: 0 auto;
+}
+
+.store-name {
+  font-size: 28px; /* ปรับขนาดตัวอักษรขึ้นเล็กน้อย */
+  font-weight: bold;
+  margin-top: 15px; /* ปรับขนาดระยะห่างขึ้นเล็กน้อย */
+}
+
+.timer {
+  font-size: 28px; /* ปรับขนาดตัวอักษรขึ้นเล็กน้อย */
+  margin-top: 25px; /* ปรับขนาดระยะห่างขึ้นเล็กน้อย */
+}
+
+.btn-upload, .btn-show-popup {
+  margin-top: 25px; 
+  padding: 12px 25px; 
+  background-color: #4caf50;
+  color: #fff; 
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+  
+}
+
+.popup {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  justify-content: center;
+  align-items: center;
+}
+
+.popup-content {
+  background: #fff; 
+  padding: 30px ; 
+  padding-right: 50px;
+  border-radius: 10px; 
+  width: 320px; 
+  text-align: center;
+ 
+}
+
+.popup-content input {
+  width: 100%;
+  margin-bottom: 15px; /* ปรับขนาดระยะห่างขึ้นเล็กน้อย */
+  padding: 10px; /* ปรับขนาดความกว้างขึ้นเล็กน้อย */
+  border: 1px solid #ddd;
+  border-radius: 5px; /* ปรับขนาดมุมขึ้นเล็กน้อย */
+  margin-right: 15px; /* ปรับขนาดระยะห่างขึ้นเล็กน้อย */
+}
+
+.popup-content button {
+  padding: 12px; /* ปรับขนาดความกว้างขึ้นเล็กน้อย */
+  background-color: #4caf50;
+  color: #fff; /* ใช้ #fff แทน white */
+  border: none;
+  cursor: pointer;
+  font-size: 18px; /* ปรับขนาดตัวอักษรขึ้นเล็กน้อย */
+  border-radius: 5px; /* ปรับขนาดมุมขึ้นเล็กน้อย */
+}
+
+
+.status-popup {
+  position: fixed;
+  border-radius: 10%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  border: 1px solid #ccc;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.status-popup-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.status-popup-content #statusIcon {
+  font-size: 50px;
+  margin-bottom: 15px;
+}
+
+.status-popup-content .success-icon {
+  color: green;
+}
+
+.status-popup-content .error-icon {
+  color: red;
+}
+
+.loading-popup {
+position: fixed;
+top: 50%;
+left: 50%;
+border-radius: 5%;
+transform: translate(-50%, -50%);
+background-color: rgba(255, 255, 255, 0.9);
+border: 1px solid #ccc;
+padding: 20px;
+box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+text-align: center;
+z-index: 9999; /* Ensure it appears above other elements */
+}
+
+.loading-popup-content {
+display: flex;
+flex-direction: column;
+align-items: center;
+}
+
+.loading-spinner {
+border: 8px solid #f3f3f3; /* Light grey */
+border-top: 8px solid #3498db; /* Blue */
+border-radius: 50%;
+width: 50px;
+height: 50px;
+animation: spin 1s linear infinite;
+margin-bottom: 15px;
+}
+
+@keyframes spin {
+0% { transform: rotate(0deg); }
+100% { transform: rotate(360deg); }
+}
+
+
+.validation-popup {
+position: fixed;
+top: 50%;
+left: 50%;
+border-radius: 5%;
+transform: translate(-50%, -50%);
+background-color: white;
+border: 1px solid #ccc;
+padding: 20px;
+box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+text-align: center;
+z-index: 9999; /* Ensure it appears above other elements */
+}
+
+.validation-popup-content {
+display: flex;
+flex-direction: column;
+align-items: center;
+}
+
+#error-icon {
+font-size: 50px;
+color: red;
+margin-bottom: 15px;
+}
+
+.error-icon {
+font-size: 50px;
+color: red;
+margin-bottom: 15px;
+font-weight: bold;
+}
+
+
+.validation-popup-content>button{
+margin-top: 25px; 
+padding: 12px 25px; 
+background-color: #4caf50;
+color: #fff; 
+border: none;
+cursor: pointer;
+font-size: 18px;
+}
+
